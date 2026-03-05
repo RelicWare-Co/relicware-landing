@@ -1,8 +1,12 @@
+import { OverseerCore } from './OverseerCore';
+
 export const Services = () => {
   return (
-    <section id="servicios" style={{ backgroundColor: 'var(--corpo-dark)' }}>
-      <div className="cyber-container">
-        <h2>VECTORES DE OPERACIÓN</h2>
+    <section id="servicios" style={{ backgroundColor: 'var(--corpo-dark)', position: 'relative', overflow: 'hidden' }}>
+      <OverseerCore />
+      
+      <div className="cyber-container" style={{ position: 'relative', zIndex: 1 }}>
+        <h2 style={{ textShadow: '0 0 10px rgba(230,0,0,0.5)' }}>VECTORES DE OPERACIÓN</h2>
         
         <div style={{
           display: 'grid',
