@@ -1,8 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './MasterCore.css';
 
 export const MasterCore = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [actValue, setActValue] = useState("000.0");
+
+  useEffect(() => {
+    const actInterval = setInterval(() => {
+      setActValue((Math.random() * 900 + 100).toFixed(1));
+    }, 500);
+    return () => clearInterval(actInterval);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -53,7 +61,7 @@ export const MasterCore = () => {
     }
 
     // Active faces (blinking server blocks)
-    let activeFaces = new Set<string>();
+    const activeFaces = new Set<string>();
     setInterval(() => {
       // Randomly turn on/off some "server panels"
       activeFaces.clear();
@@ -103,13 +111,13 @@ export const MasterCore = () => {
 
       const projected = nodes.map(node => {
         // Rotate around Y axis
-        let x1 = node.x * cosY - node.z * sinY;
-        let z1 = node.z * cosY + node.x * sinY;
-        let y1 = node.y;
+        const x1 = node.x * cosY - node.z * sinY;
+        const z1 = node.z * cosY + node.x * sinY;
+        const y1 = node.y;
 
         // Rotate around X axis (Tilt)
-        let y2 = y1 * cosX - z1 * sinX;
-        let z2 = z1 * cosX + y1 * sinX;
+        const y2 = y1 * cosX - z1 * sinX;
+        const z2 = z1 * cosX + y1 * sinX;
 
         // Simple perspective projection
         const fov = 600;
@@ -183,7 +191,6 @@ export const MasterCore = () => {
       // Draw Central Laser Beam
       ctx.beginPath();
       // Calculate top and bottom center
-      const topScale = 600 / (600 + (nodes[0].z * cosX + nodes[0].y * sinX) + 200); // approximate
       ctx.moveTo(cx, cy - (layers * rowHeight * 0.5));
       ctx.lineTo(cx, cy + (layers * rowHeight * 0.5));
       ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
@@ -201,12 +208,12 @@ export const MasterCore = () => {
         const oAngle = time * (1 + o * 0.5) + (o * Math.PI / 2);
         
         // Convert to 3D and project
-        let ox = Math.cos(oAngle) * oRadius;
-        let oz = Math.sin(oAngle) * oRadius;
-        let oy = 0 + Math.sin(time * 2 + o) * 30; // Float up and down
+        const ox = Math.cos(oAngle) * oRadius;
+        const oz = Math.sin(oAngle) * oRadius;
+        const oy = 0 + Math.sin(time * 2 + o) * 30; // Float up and down
         
-        let oz1 = oz * cosX + oy * sinX;
-        let oy1 = oy * cosX - oz * sinX;
+        const oz1 = oz * cosX + oy * sinX;
+        const oy1 = oy * cosX - oz * sinX;
         
         const fov = 600;
         const scale = fov / (fov + oz1 + 200);
@@ -244,7 +251,7 @@ export const MasterCore = () => {
       <div className="hud-corner bottom-right"></div>
       
       <div className="hud-tag act-tag">
-        <span className="blink">ACT:</span> {(Math.random() * 900 + 100).toFixed(1)}
+        <span className="blink">ACT:</span> {actValue}
       </div>
       <div className="hud-tag sec-tag">SEC: APEX</div>
       
