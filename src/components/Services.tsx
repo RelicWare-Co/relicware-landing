@@ -1,111 +1,87 @@
 import { OverseerCore } from './OverseerCore';
+import './Services.css';
 
 export const Services = () => {
   return (
-    <section id="servicios" style={{ backgroundColor: 'var(--corpo-dark)', position: 'relative', overflow: 'hidden' }}>
+    <section id="servicios" className="services-section">
       <OverseerCore />
       
-      <div className="cyber-container" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 style={{ textShadow: '0 0 10px rgba(230,0,0,0.5)' }}>VECTORES DE OPERACIÓN</h2>
+      <div className="cyber-container services-content">
+        <h2 className="services-title">VECTORES DE OPERACIÓN</h2>
         
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '2.5rem',
-          marginTop: '4rem'
-        }}>
+        <div className="services-grid">
           {/* Service 1 */}
-          <div className="corpo-card">
-            <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontFamily: 'var(--font-logo)' }}>
-              1. DESARROLLO WEB
-            </h3>
-            <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>
+          <div className="corpo-card service-card">
+            <h3>1. DESARROLLO WEB</h3>
+            <p className="service-desc">
               Interfaces públicas de alta conversión. Optimizamos su presencia en la red global asegurando velocidad y persuasión corporativa sin fricciones.
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', color: '#aaa' }}>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Sistemas React & Next.js
+            <ul className="service-features">
+              <li className="service-feature">
+                <span>▪</span> Sistemas React & Next.js
               </li>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Interfaces Psicológicamente Optimizadas
+              <li className="service-feature">
+                <span>▪</span> Interfaces Psicológicamente Optimizadas
               </li>
-              <li style={{ display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Rendimiento de Grado Militar
+              <li className="service-feature">
+                <span>▪</span> Rendimiento de Grado Militar
               </li>
             </ul>
           </div>
 
           {/* Service 2 */}
-          <div className="corpo-card">
-            <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontFamily: 'var(--font-logo)' }}>
-              2. SOFTWARE A MEDIDA
-            </h3>
-            <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>
+          <div className="corpo-card service-card">
+            <h3>2. SOFTWARE A MEDIDA</h3>
+            <p className="service-desc">
               Despliegue de sistemas internos avanzados. Elevamos la jerarquía operativa de su empresa mediante plataformas estructurales centralizadas.
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', color: '#aaa' }}>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Arquitecturas Escalables
+            <ul className="service-features">
+              <li className="service-feature">
+                <span>▪</span> Arquitecturas Escalables
               </li>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Bóvedas de Datos Secure
+              <li className="service-feature">
+                <span>▪</span> Bóvedas de Datos Secure
               </li>
-              <li style={{ display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Interconexión de APIs Estricta
+              <li className="service-feature">
+                <span>▪</span> Interconexión de APIs Estricta
               </li>
             </ul>
           </div>
 
           {/* Service 3 */}
-          <div className="corpo-card" style={{ borderTop: '1px solid var(--corpo-red)' }}>
-            <h3 style={{ color: 'var(--corpo-red)', marginBottom: '1rem', fontFamily: 'var(--font-logo)' }}>
-              3. CIBERSEGURIDAD
-            </h3>
-            <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>
+          <div className="corpo-card service-card highlight">
+            <h3>3. CIBERSEGURIDAD</h3>
+            <p className="service-desc">
               Defensa y contención. Implementamos protocolos defensivos de clase corporativa que mitigan cualquier intrusión o extracción no autorizada de activos.
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', color: '#aaa' }}>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Encriptación End-to-End
+            <ul className="service-features">
+              <li className="service-feature">
+                <span>▪</span> Encriptación End-to-End
               </li>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Anulación de Amenazas
+              <li className="service-feature">
+                <span>▪</span> Anulación de Amenazas
               </li>
-              <li style={{ display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Monitoreo Predictivo 24/7
+              <li className="service-feature">
+                <span>▪</span> Monitoreo Predictivo 24/7
               </li>
             </ul>
           </div>
 
           {/* Service 4 */}
-          <div className="corpo-card">
-            <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontFamily: 'var(--font-logo)' }}>
-              4. INTELIGENCIA AUTOMATIZADA
-            </h3>
-            <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>
+          <div className="corpo-card service-card">
+            <h3>4. INTELIGENCIA AUTOMATIZADA</h3>
+            <p className="service-desc">
               Sustitución de la dependencia humana. Integramos IA en sus flujos diarios para recortes de costos, optimización de márgenes y toma de decisiones.
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', color: '#aaa' }}>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Agentes Neurales
+            <ul className="service-features">
+              <li className="service-feature">
+                <span>▪</span> Agentes Neurales
               </li>
-              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Procesamiento de Lenguaje
+              <li className="service-feature">
+                <span>▪</span> Procesamiento de Lenguaje
               </li>
-              <li style={{ display: 'flex', alignItems: 'center' }}>
-                <span style={{ color: 'var(--corpo-red)', marginRight: '10px', fontSize: '1.2rem' }}>▪</span>
-                Previsión Analítica
+              <li className="service-feature">
+                <span>▪</span> Previsión Analítica
               </li>
             </ul>
           </div>
