@@ -1,12 +1,17 @@
+import { NetworkStream } from './NetworkStream';
+
 export const TrustedBy = () => {
   return (
     <section id="clientes" style={{ 
       backgroundColor: 'var(--corpo-dark)', 
       padding: '4rem 0',
       borderTop: '1px solid var(--corpo-border)',
-      borderBottom: '1px solid var(--corpo-border)'
+      borderBottom: '1px solid var(--corpo-border)',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
-      <div className="cyber-container">
+      <NetworkStream />
+      <div className="cyber-container" style={{ position: 'relative', zIndex: 1 }}>
         <h3 style={{ 
           textAlign: 'center', 
           color: 'var(--text-muted)', 
