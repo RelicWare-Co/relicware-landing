@@ -1,0 +1,182 @@
+:root {
+  --corpo-red: #e60000;
+  --corpo-dark: #000000;
+  --corpo-panel: #0a0a0a;
+  --corpo-border: #1a1a1a;
+  --text-primary: #f5f5f5;
+  --text-muted: #888888;
+  
+  --font-logo: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--corpo-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-logo);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: var(--corpo-red);
+}
+
+@media (min-width: 768px) {
+  h1 { font-size: 5rem; }
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 4px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--corpo-red);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+  color: var(--corpo-red);
+}
+
+/* CORPORATE BUTTON */
+.corpo-button {
+  background: transparent;
+  color: var(--corpo-red);
+  font-family: var(--font-logo);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  border: 1px solid var(--corpo-red);
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+.corpo-button:hover {
+  background: var(--corpo-red);
+  color: var(--corpo-dark);
+  box-shadow: 0 0 15px rgba(230, 0, 0, 0.4);
+}
+
+.corpo-button.primary {
+  background: var(--corpo-red);
+  color: var(--corpo-dark);
+}
+
+.corpo-button.primary:hover {
+  background: transparent;
+  color: var(--corpo-red);
+}
+
+/* SLEEK GLITCH / OFFSET EFFECT FOR HEADINGS */
+.corpo-glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--corpo-red);
+}
+
+.corpo-glitch::before,
+.corpo-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--corpo-dark);
+  color: var(--text-primary);
+  z-index: -1;
+}
+
+.corpo-glitch::before {
+  left: 3px;
+  text-shadow: -1px 0 var(--corpo-red);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-corpo 4s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-corpo {
+  0% { clip: rect(75px, 9999px, 86px, 0); transform: translateX(0); }
+  5% { clip: rect(10px, 9999px, 14px, 0); transform: translateX(-2px); }
+  10% { clip: rect(40px, 9999px, 45px, 0); transform: translateX(2px); }
+  15% { clip: rect(0px, 9999px, 0px, 0); transform: translateX(0); }
+  100% { clip: rect(0px, 9999px, 0px, 0); transform: translateX(0); }
+}
+
+/* PANELS / CARDS */
+.corpo-card {
+  background: var(--corpo-panel);
+  border: 1px solid var(--corpo-border);
+  padding: 3rem 2rem;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+.corpo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--text-muted);
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.corpo-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--corpo-red);
+  box-shadow: 0 10px 30px rgba(230, 0, 0, 0.05);
+}
+
+.corpo-card:hover::before {
+  background-color: var(--corpo-red);
+  width: 100px;
+}
+
+.cyber-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 6rem 0;
+}
