@@ -10,12 +10,79 @@
   align-items: center;
   overflow: hidden;
   transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  perspective: 1000px;
 }
 
 .boot-container.fade-out {
   opacity: 0;
-  transform: scale(1.05);
+  transform: scale(1.1) translateZ(100px);
   pointer-events: none;
+}
+
+.mainframe-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+/* 3D CORE REACTOR BACKGROUND */
+.core-reactor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(60deg);
+  width: 600px;
+  height: 600px;
+  z-index: 2;
+  opacity: 0.15;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.reactor-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--corpo-red);
+  box-shadow: 0 0 20px var(--corpo-red), inset 0 0 20px var(--corpo-red);
+}
+
+.ring-1 {
+  border-style: solid;
+  animation: spin-reactor 10s linear infinite;
+}
+
+.ring-2 {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-style: dashed;
+  border-width: 6px;
+  animation: spin-reactor 15s linear infinite reverse;
+}
+
+.ring-3 {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  border-style: dotted;
+  border-width: 8px;
+  animation: spin-reactor 8s linear infinite;
+}
+
+@keyframes spin-reactor {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
 }
 
 .scanlines {
