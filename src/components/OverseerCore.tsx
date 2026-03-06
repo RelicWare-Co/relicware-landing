@@ -58,8 +58,8 @@ export const OverseerCore = () => {
       
       for (let i = -cols/2; i <= cols/2; i++) {
         for (let j = -rows/2; j <= rows/2; j++) {
-          let x = i * hexWidth + (j % 2 === 0 ? 0 : hexWidth / 2);
-          let y = j * hexHeight * 0.75;
+          const x = i * hexWidth + (j % 2 === 0 ? 0 : hexWidth / 2);
+          const y = j * hexHeight * 0.75;
           
           ctx.beginPath();
           for (let k = 0; k < 6; k++) {

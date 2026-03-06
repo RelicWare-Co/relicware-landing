@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      {booting && <BootSequence onComplete={() => setBooting(false)} />}
+      {booting ? <BootSequence onComplete={() => setBooting(false)} /> : null}
       <div style={{ opacity: booting ? 0 : 1, transition: 'opacity 0.6s ease-in', height: '100%' }}>
         <Navbar />
         <Hero />

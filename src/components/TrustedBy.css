@@ -1,0 +1,75 @@
+.trusted-section {
+  background-color: var(--corpo-dark);
+  padding: 4rem 0;
+  border-top: 1px solid var(--corpo-border);
+  border-bottom: 1px solid var(--corpo-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.trusted-content {
+  position: relative;
+  z-index: 1;
+}
+
+.trusted-title {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: var(--font-logo);
+}
+
+.trusted-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  opacity: 0.5;
+}
+
+.trusted-logo {
+  font-family: var(--font-logo);
+}
+
+.logo-nexus {
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+}
+
+.logo-militech {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  border: 1px solid currentColor;
+  padding: 0.5rem 1rem;
+}
+
+.logo-kangtao {
+  font-size: 1.5rem;
+  letter-spacing: 8px;
+  font-weight: bold;
+}
+
+.logo-omni {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+}
+
+.dot-red {
+  color: var(--corpo-red);
+}
+
+@media (max-width: 768px) {
+  .trusted-logos {
+    gap: 3rem;
+    flex-direction: column;
+  }
+  
+  .trusted-title {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+}

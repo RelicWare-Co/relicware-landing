@@ -50,6 +50,10 @@ h2 {
   letter-spacing: 4px;
 }
 
+@media (max-width: 768px) {
+  h2 { font-size: 1.8rem; }
+}
+
 h2::after {
   content: '';
   position: absolute;
