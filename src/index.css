@@ -92,6 +92,16 @@ a:hover {
   clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
 }
 
+@media (max-width: 480px) {
+  .corpo-button {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 .corpo-button:hover {
   background: var(--corpo-red);
   color: var(--corpo-dark);

@@ -125,8 +125,14 @@
   border-bottom: 2px solid var(--corpo-red);
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
+}
+
+@media (min-width: 768px) {
+  .system-status {
+    font-size: 1rem;
+  }
 }
 
 .auth-level {
@@ -135,7 +141,7 @@
 
 .terminal-logs {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: var(--corpo-red);
   text-shadow: 0 0 5px rgba(230, 0, 0, 0.5);
@@ -143,6 +149,13 @@
   flex-direction: column;
   gap: 0.5rem;
   flex-grow: 1;
+  word-break: break-word;
+}
+
+@media (min-width: 768px) {
+  .terminal-logs {
+    font-size: 1.1rem;
+  }
 }
 
 .log-prefix {
@@ -173,13 +186,14 @@
 }
 
 .boot-logo {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--text-primary);
   text-shadow: 2px 2px 0px var(--corpo-red);
   position: relative;
   display: inline-block;
   margin: 0;
+  max-width: 100vw;
 }
 
 @media (min-width: 768px) {
@@ -224,10 +238,18 @@
 
 .boot-subtitle {
   font-family: var(--font-body);
-  font-size: 1rem;
-  letter-spacing: 5px;
+  font-size: 0.70rem;
+  letter-spacing: 2px;
   color: var(--text-muted);
   margin-top: 1rem;
+  padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .boot-subtitle {
+    font-size: 1rem;
+    letter-spacing: 5px;
+  }
 }
 
 .access-granted {
